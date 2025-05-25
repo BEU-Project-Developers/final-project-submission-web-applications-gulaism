@@ -1,0 +1,29 @@
+﻿@{
+	ViewData["Title"] = "Forget Your Password";
+}
+<div class="container-fluid py-5 mainBg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <h2 class="text-40 fw-bold text-yellow mb-3">Forgot Your Password?</h2>
+                <p class="text-22 fw-medium textMain mb-4">No worries! Enter your email address below, and we'll send you instructions to reset your password.</p>
+
+                <form>
+                    <div class="mb-3">
+                        <input type="email" class="form-control rounded-pill py-3" placeholder="Email Address">
+                    </div>
+                    <button type="submit" class="btn btn-warning rounded-pill fw-bold py-3 w-100 textLightPurple">Send Reset Instructions</button>
+                </form>
+
+                <p class="mt-4 textMain text-16 fw-medium">Remember your password? <a asp-controller="Account" asp-action="SignUp" class="text-yellow">Sign In</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .btn-warning {
+        background-color: #ffc107 !important;
+        color: #5947ab !important;
+    }
+</style>

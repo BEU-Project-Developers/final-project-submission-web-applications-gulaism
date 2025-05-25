@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35818.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KodlaWebApp", "KodlaWebApp.csproj", "{79DC86AB-4442-49FF-AA09-66A5F665581F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79DC86AB-4442-49FF-AA09-66A5F665581F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79DC86AB-4442-49FF-AA09-66A5F665581F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79DC86AB-4442-49FF-AA09-66A5F665581F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79DC86AB-4442-49FF-AA09-66A5F665581F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B63E28EF-FAA2-4B0A-9D45-A61F163F9F53}
+	EndGlobalSection
+EndGlobal

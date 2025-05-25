@@ -1,0 +1,330 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+
+/* specific elements */
+
+.welcomingDiv {
+    width: 100% !important;
+    padding: 145px 80px !important;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+/* text colors */
+.text-yellow {
+    color: #FED151 !important;
+}
+
+.textMain {
+    color: #F2F2F2 !important;
+}
+
+.textLightPurple {
+    color: #5947AB !important;
+}
+.textGray {
+    color: 796F6F;
+}
+.textBrown {
+    color: #796F6F;
+}
+
+
+/* text sizes */
+
+.text-18 {
+    font-size: 18px !important;
+}
+
+.text-20 {
+    font-size: 20px !important;
+}
+
+.mt-65 {
+    margin-top: 65px !important;
+}
+
+.text-22 {
+    font-size: 22px !important;
+}
+
+.text-30 {
+    font-size: 30px !important;
+}
+
+.text-26 {
+    font-size: 26px !important;
+}
+
+.text-24 {
+    font-size: 24px !important;
+}
+
+.text-40 {
+    font-size: 40px !important;
+}
+
+.text-45 {
+    font-size: 45px !important;
+}
+
+
+/* background color */
+
+.mainBg {
+    background-color: #5947ab;
+}
+
+.yellowBg {
+    background-color: #FBD15B;
+}
+
+.bgGrayNew {
+    background-color: #fbfbfc;
+}
+
+
+/* padding styles */
+
+.p-15-99 {
+    padding: 15px 99px !important;
+}
+
+.pb-11 {
+    padding-top: 11px !important;
+}
+
+.pb-12 {
+    padding-bottom: 12px !important;
+}
+
+.pb-15 {
+    padding-bottom: 15px !important;
+}
+
+.p-15 {
+    padding: 15px;
+}
+
+.p-18 {
+    padding: 18px;
+}
+
+.py-23 {
+    padding-top: 23px !important;
+    padding-bottom: 23px !important;
+}
+
+.pb-30 {
+    padding-bottom: 30px !important;
+}
+
+.px-40 {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+}
+
+.pt-66 {
+    padding-top: 66px;
+}
+
+.pb-67 {
+    padding-bottom: 67px !important;
+}
+
+.pb-78 {
+    padding-bottom: 78px !important;
+}
+
+.p-80-300 {
+    padding: 80px 300px;
+}
+
+.pt-129 {
+    padding-top: 129px !important;
+}
+
+.pb-143 {
+    padding-bottom: 143px !important;
+}
+
+.px-90 {
+    padding-right: 90px !important;
+    padding-left: 90px !important;
+}
+
+.px-370 {
+    padding-right: 370px !important;
+    padding-left: 370px !important;
+}
+
+
+/* margin sizes */
+.mb-68 {
+    margin-bottom: 68px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+
+/* button styles */
+.btnSignUp {
+    border: 1px solid #F2F2F2 !important;
+    padding: 10px 30px !important;
+    font-size: 16px !important;
+    background: transparent !important;
+    border-radius: 5px !important;
+}
+
+.btnRegister {
+    padding: 9px 39px !important;
+    color: #5948a9 !important;
+    box-shadow: none !important;
+    margin-left: 23px !important;
+}
+
+.darkBtn {
+    background-color: #3a229a;
+    border-radius: 5px;
+    padding: 16px 55px;
+    box-shadow: none !important;
+    color: #F2F2F2;
+    font-size: 22px;
+    margin-top: 40px;
+    margin-right: 21px;
+}
+
+/* size styles */
+
+.max-w-50per {
+    max-width: 600px;
+}
+
+.h-237 {
+    height: 237px !important;
+}
+
+.min-h-374 {
+    min-height: 374px !important;
+}
+
+.max-w-450 {
+    max-width: 450px !important;
+}
+
+.max-w-1000 {
+    max-width: 1000px !important;
+}
+
+.max-w-33per {
+    max-width: 33% !important;
+}
+
+.w-90per {
+    width: 90%;
+}
+
+.px-141 {
+    padding-right: 141px;
+    padding-left: 141px;
+}
+
+.min-w-224 {
+    min-width: 224px;
+}
+
+.max-w-content {
+    max-width: max-content;
+}
+
+.h-62 {
+    height: 62px;
+    margin-top: 42px;
+}
+
+.h-326 {
+    height: 326px;
+}
+
+.imageSizeBig {
+    width: 480px;
+    height: 381px;
+}
+
+.imageSizes {
+    width: 230px;
+    height: 228px;
+}
+
+.smallImg {
+    width: 75px;
+    heihgt: 75px;
+}
+
+/* photo styles */
+
+.welcomingPhoto {
+    width: 576px;
+    height: 412px;
+}
+
+
+/* pseudo classes */
+.link-none:hover {
+    color: #5947AB !important;
+}
+
+
+/* display styles */
+.grid-template-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 43px;
+    row-gap: 66px;
+}
+
+.gap-10 {
+    gap: 10px;
+}
+
+.gap-18 {
+    gap: 18px;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+.gap-150 {
+    gap: 150px !important;
+}
+
+
+/* radius */
+.rounded-10 {
+    border-radius: 10px;
+    border: none;
+}

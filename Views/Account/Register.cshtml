@@ -1,0 +1,68 @@
+﻿@model KodlaWebApp.Models.UserViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="container-fluid py-5 mainBg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <h2 class="text-40 fw-bold text-yellow mb-3">Create a New Account.</h2>
+                <p class="text-22 fw-medium textMain mb-4">Set up your education camp, carry the tradition of teaching to the future. Be a part of our community and experience teaching.</p>
+
+                <div class="mb-3">
+                    <button class="btn btn-light rounded-pill fw-bold w-50 py-2 me-2"><i class="bi bi-google me-2"></i> Continue with Google</button>
+                </div>
+
+                <form asp-action="Register" method="post">
+                    <div class="mb-3">
+                        <input type="text" class="form-control rounded-pill py-3" placeholder="Full Name">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control rounded-pill py-3" placeholder="Username">
+                    </div>
+                    <div class="mb-3">
+                        <input asp-for="Email" type="email" class="form-control rounded-pill py-3" placeholder="Email Address">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3 position-relative">
+                        <input asp-for="Password" type="password" class="form-control rounded-pill py-3" placeholder="Password">
+                        <i class="bi bi-eye-slash position-absolute top-50 end-0 translate-middle-y me-3" style="cursor: pointer;"></i>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-check text-start mb-3">
+                        <input type="checkbox" class="form-check-input rounded" id="terms">
+                        <label class="form-check-label textMain text-16 fw-medium" for="terms">I accept the <a asp-controller="Home" asp-action="Privacy" class="text-yellow">Privacy Policy</a> and <a class="text-yellow">Terms of Use</a>.</label>
+                    </div>
+                    <button type="submit" class="btn btn-warning rounded-pill fw-bold py-3 w-100 textLightPurple">Sign Up</button>
+                </form>
+                @section Scripts {
+                    <partial name="_ValidationScriptsPartial" />
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .btn-light {
+        background-color: #f8f9fa !important;
+        color: #212529 !important;
+    }
+
+    .btn-primary {
+        background-color: #0d6efd !important;
+        color: #fff !important;
+    }
+
+    .btn-warning {
+        background-color: #ffc107 !important;
+        color: #5947ab !important;
+    }
+
+    .form-check-input:checked {
+        background-color: #ffc107 !important;
+        border-color: #ffc107 !important;
+    }
+</style>
