@@ -1,5 +1,5 @@
 ﻿@using KodlaWebApp.ViewModels
-@model KodlaWebApp.ViewModels.UserLoginViewModel
+@model KodlaWebApp.ViewModels.RegisterViewModel
 
 @{
     ViewData["Title"] = "Register";
@@ -17,11 +17,14 @@
                 </div>
 
                 <form asp-action="Register" method="post">
+                   
                     <div class="mb-3">
-                        <input type="text" class="form-control rounded-pill py-3" placeholder="Full Name">
+                        <input asp-for="FullName" type="text" class="form-control rounded-pill py-3" placeholder="Full Name">
+                        <span asp-validation-for="FullName" class="text-danger"></span>
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control rounded-pill py-3" placeholder="Username">
+                        <input asp-for="Username" type="text" class="form-control rounded-pill py-3" placeholder="Username">
+                        <span asp-validation-for="Username" class="text-danger"></span>
                     </div>
                     <div class="mb-3">
                         <input asp-for="Email" type="email" class="form-control rounded-pill py-3" placeholder="Email Address">
@@ -32,10 +35,17 @@
                         <i class="bi bi-eye-slash position-absolute top-50 end-0 translate-middle-y me-3" style="cursor: pointer;"></i>
                         <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
+                    <div class="mb-3 position-relative">
+                        <input asp-for="ConfirmPassword" type="password" class="form-control rounded-pill py-3" placeholder="Confirm Password">
+                        <i class="bi bi-eye-slash position-absolute top-50 end-0 translate-middle-y me-3" style="cursor: pointer;"></i>
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <div asp-validation-summary="All" class="text-danger mb-3"></div>
                     <div class="form-check text-start mb-3">
                         <input type="checkbox" class="form-check-input rounded" id="terms">
                         <label class="form-check-label textMain text-16 fw-medium" for="terms">I accept the <a asp-controller="Home" asp-action="Privacy" class="text-yellow">Privacy Policy</a> and <a class="text-yellow">Terms of Use</a>.</label>
                     </div>
+
                     <button type="submit" class="btn btn-warning rounded-pill fw-bold py-3 w-100 textLightPurple">Sign Up</button>
                 </form>
                 @section Scripts {

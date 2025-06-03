@@ -11,7 +11,7 @@ namespace KodlaWebApp.Data
 
             if(!context.Categories.Any())
             {
-                context.Categories.Add(new Category { Name = "Agile" });
+                context.Categories.Add(new Category { Name = "Agile", Description = "This is a category for Agile methodologies." });
                 context.SaveChanges();
             }
         }

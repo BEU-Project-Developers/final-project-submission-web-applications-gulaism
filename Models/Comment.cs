@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
 namespace KodlaWebApp.Models
 {
@@ -13,9 +14,9 @@ namespace KodlaWebApp.Models
 
         public DateTime Timestamp { get; set; } = DateTime.UtcNow;
 
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         [ForeignKey("UserId")]
-        public User User { get; set; }
+        public IdentityUser User { get; set; }
 
         public int LessonId { get; set; }
         [ForeignKey("LessonId")]

@@ -1,5 +1,8 @@
-﻿@{
-    ViewData["Title"] = "Sign in";
+﻿@using KodlaWebApp.ViewModels
+@model KodlaWebApp.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Sign In";
 }
 
 <div class="container-fluid py-5 mainBg">
@@ -13,14 +16,23 @@
                     <button class="btn btn-light rounded-pill fw-bold w-50 py-2 me-2"><i class="bi bi-google me-2"></i> Continue with Google</button>
                 </div>
 
-                <form>
+                <form asp-action="SignIn" method="post">
                     <div class="mb-3">
-                        <input type="email" class="form-control rounded-pill py-3" placeholder="Email Address">
+                        <input asp-for="Email" type="email" class="form-control rounded-pill py-3" placeholder="Email Address">
+                        <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
                     <div class="mb-3 position-relative">
-                        <input type="password" class="form-control rounded-pill py-3" placeholder="Password">
+                        <input asp-for="Password" type="password" class="form-control rounded-pill py-3" placeholder="Password">
                         <i class="bi bi-eye-slash position-absolute top-50 end-0 translate-middle-y me-3" style="cursor: pointer;"></i>
+                        <span asp-validation-for="Password"></span>
                     </div>
+                    <div class="form-check text-start mb-3">
+                        <input asp-formaction="RememberMe" type="checkbox" class="form-check-input rounded" id="rememberMe"/>
+                        <label class="form-check-label textMain text-16 fw-medium" for="rememberMe">Remember Me</label>
+                    </div>
+
+                    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
                     <div class="mb-3 text-start">
                         <a asp-controller="Account" asp-action="ForgetPas" class="text-yellow text-16 fw-medium">Forgot Your Password?</a>
                     </div>
