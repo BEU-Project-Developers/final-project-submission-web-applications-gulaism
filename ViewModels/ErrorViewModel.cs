@@ -1,4 +1,4 @@
-namespace SDF1App.Models
+namespace KodlaWebApp.ViewModels
 {
     public class ErrorViewModel
     {

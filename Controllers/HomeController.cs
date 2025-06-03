@@ -1,8 +1,9 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using SDF1App.Models;
+using KodlaWebApp.Models;
+using KodlaWebApp.ViewModels;
 
-namespace SDF1App.Controllers;
+namespace KodlaWebApp.Controllers;
 
 public class HomeController : Controller
 {

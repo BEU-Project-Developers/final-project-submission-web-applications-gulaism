@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace SDF1App.Controllers
+namespace KodlaWebApp.Controllers
 {
     public class JoinUsController : Controller
     {

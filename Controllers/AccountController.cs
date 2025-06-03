@@ -1,4 +1,4 @@
-﻿using KodlaWebApp.Models;
+﻿using KodlaWebApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
@@ -19,7 +19,7 @@ namespace KodlaWebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(UserViewModel model)
+        public IActionResult Register(UserLoginViewModel model)
         {
             if (RegisteredEmails.Contains(model.Email))
             {
