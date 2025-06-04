@@ -39,6 +39,27 @@
                         <li class="nav-item">
                             <a class="nav-link textMain" asp-area="" asp-controller="Teachers" asp-action="Index">Teachers</a>
                         </li>
+
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item me-4">
+                                    <a class="nav-link textMain" asp-area="" asp-controller="Admin" asp-action="Dashboard">Admin Dashboard</a>
+                                </li>
+                            }
+                            @if (User.IsInRole("Instructor") || User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item me-4">
+                                    <a class="nav-link textMain" asp-area="" asp-controller="Course" asp-action="Index">Manage Courses</a>
+                                </li>
+                            }
+                            @* You can add a "Hello User!" message here if you want it in the main nav area *
+                            <li class="nav-item me-4">
+                                <span class="nav-link textMain">Hello @User.Identity.Name!</span>
+                            </li>
+                            *@
+                        }
                     </ul>
                 </div>
                 @if(SignInManager.IsSignedIn(User))

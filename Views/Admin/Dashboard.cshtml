@@ -2,42 +2,69 @@
     ViewData["Title"] = "Admin Dashboard";
 }
 
-<div class="container-fluid py-5 mainBg" style="min-height: calc(100vh - 100px);">
+<div class="container-fluid py-5" style="min-height: calc(100vh - 100px);">
+    @* Removed mainBg from here. The mainBg from _Layout.cshtml or site.css will apply to the body/main wrapper. *@
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8 text-center">
-                <h1 class="text-40 fw-bold text-yellow mb-4">Admin Dashboard</h1>
+            <div class="col-md-10 text-center">
+                @* Adjusted column width for better spacing *@
+                <h1 class="text-40 fw-bold text-yellow mb-4">Admin Dashboard</h1> @* Using your existing classes *@
                 <p class="text-22 fw-medium textMain mb-5">
+                    @* Using your existing classes *@
                     Welcome, Administrator! Here you can manage users, roles, content, and application settings.
                 </p>
 
                 <div class="row g-4">
+                    @* Bootstrap's gutter utility for spacing *@
                     <div class="col-md-6">
-                        <div class="card p-4 shadow-sm bg-white rounded-3">
-                            <h3 class="text-28 fw-bold text-dark mb-3">User Management</h3>
-                            <p class="text-18 textMain mb-3">View, create, edit, or delete user accounts and assign roles.</p>
-                            <a href="#" class="btn btn-warning rounded-pill fw-bold py-2 w-75 textLightPurple">Manage Users</a>
+                        <div class="card p-4 shadow-sm bg-white rounded-3 h-100 d-flex flex-column justify-content-between">
+                            @* Added h-100, d-flex, flex-column, justify-content-between for consistent card height and content alignment *@
+                            <div class="card-body text-center">
+                                @* Centered card content *@
+                                <i class="bi bi-people-fill text-60 textLightPurple mb-3"></i> @* Bootstrap Icon with custom size/color *@
+                                <h3 class="text-28 fw-bold text-dark mb-2">User Management</h3> @* Using text-dark for headings *@
+                                <p class="text-18 text-secondary mb-3">View, create, edit, or delete user accounts and assign roles.</p> @* Using text-secondary for body text *@
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0 d-flex justify-content-center">
+                                @* Centered button in footer *@
+                                <a href="#" class="btn btn-warning rounded-pill fw-bold py-2 w-75 textLightPurple">Manage Users</a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="card p-4 shadow-sm bg-white rounded-3">
-                            <h3 class="text-28 fw-bold text-dark mb-3">Content Management</h3>
-                            <p class="text-18 textMain mb-3">Oversee courses, categories, articles, and other site content.</p>
-                            <a href="#" class="btn btn-warning rounded-pill fw-bold py-2 w-75 textLightPurple">Manage Content</a>
+                        <div class="card p-4 shadow-sm bg-white rounded-3 h-100 d-flex flex-column justify-content-between">
+                            <div class="card-body text-center">
+                                <i class="bi bi-book-fill text-60 textLightPurple mb-3"></i> @* Bootstrap Icon *@
+                                <h3 class="text-28 fw-bold text-dark mb-2">Content Management</h3>
+                                <p class="text-18 text-secondary mb-3">Oversee courses, categories, articles, and other site content.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0 d-flex justify-content-center">
+                                <a href="#" class="btn btn-warning rounded-pill fw-bold py-2 w-75 textLightPurple">Manage Content</a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="card p-4 shadow-sm bg-white rounded-3">
-                            <h3 class="text-28 fw-bold text-dark mb-3">Settings & Configuration</h3>
-                            <p class="text-18 textMain mb-3">Adjust application-wide settings and configurations.</p>
-                            <a href="#" class="btn btn-warning rounded-pill fw-bold py-2 w-75 textLightPurple">Site Settings</a>
+                        <div class="card p-4 shadow-sm bg-white rounded-3 h-100 d-flex flex-column justify-content-between">
+                            <div class="card-body text-center">
+                                <i class="bi bi-gear-fill text-60 textLightPurple mb-3"></i> @* Bootstrap Icon *@
+                                <h3 class="text-28 fw-bold text-dark mb-2">Settings & Configuration</h3>
+                                <p class="text-18 text-secondary mb-3">Adjust application-wide settings and configurations.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0 d-flex justify-content-center">
+                                <a href="#" class="btn btn-warning rounded-pill fw-bold py-2 w-75 textLightPurple">Site Settings</a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="card p-4 shadow-sm bg-white rounded-3">
-                            <h3 class="text-28 fw-bold text-dark mb-3">Analytics & Reports</h3>
-                            <p class="text-18 textMain mb-3">View site performance, user activity, and other important metrics.</p>
-                            <a href="#" class="btn btn-warning rounded-pill fw-bold py-2 w-75 textLightPurple">View Reports</a>
+                        <div class="card p-4 shadow-sm bg-white rounded-3 h-100 d-flex flex-column justify-content-between">
+                            <div class="card-body text-center">
+                                <i class="bi bi-graph-up text-60 textLightPurple mb-3"></i> @* Bootstrap Icon *@
+                                <h3 class="text-28 fw-bold text-dark mb-2">Analytics & Reports</h3>
+                                <p class="text-18 text-secondary mb-3">View site performance, user activity, and other important metrics.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0 d-flex justify-content-center">
+                                <a href="#" class="btn btn-warning rounded-pill fw-bold py-2 w-75 textLightPurple">View Reports</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -47,39 +74,97 @@
     </div>
 </div>
 
-<style>
-    /* Add any custom styles from your common CSS or other views here */
-    /* Example from your previous codes: */
-    .btn-warning {
-        background-color: #ffc107 !important;
-        color: #5947ab !important; /* textLightPurple color */
-    }
 
-    .text-yellow {
-        color: #ffc107 !important;
-    }
 
-    .textMain {
-        color: #6c757d; /* Placeholder, use your actual main text color */
-    }
 
-    .textLightPurple {
-        color: #5947ab !important;
-    }
 
-    .mainBg {
-        /* Define your main background here */
-        /* background-image: url('your-background-image.jpg'); */
-        background-color: #f8f9fa; /* Example light background */
-    }
 
-    .card {
-        border: none;
-        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-        }
-</style>
+
+@* @{ *@
+@*     ViewData["Title"] = "Admin Dashboard"; *@
+@* } *@
+
+@* <div class="container-fluid py-5 mainBg" style="min-height: calc(100vh - 100px);"> *@
+@*     <div class="container"> *@
+@*         <div class="row justify-content-center"> *@
+@*             <div class="col-md-8 text-center"> *@
+@*                 <h1 class="text-40 fw-bold text-yellow mb-4">Admin Dashboard</h1> *@
+@*                 <p class="text-22 fw-medium textMain mb-5"> *@
+@*                     Welcome, Administrator! Here you can manage users, roles, content, and application settings. *@
+@*                 </p> *@
+
+@*                 <div class="row g-4"> *@
+@*                     <div class="col-md-6"> *@
+@*                         <div class="card p-4 shadow-sm bg-white rounded-3"> *@
+@*                             <h3 class="text-28 fw-bold text-dark mb-3">User Management</h3> *@
+@*                             <p class="text-18 textMain mb-3">View, create, edit, or delete user accounts and assign roles.</p> *@
+@*                             <a href="#" class="btn btn-warning rounded-pill fw-bold py-2 w-75 textLightPurple">Manage Users</a> *@
+@*                         </div> *@
+@*                     </div> *@
+@*                     <div class="col-md-6"> *@
+@*                         <div class="card p-4 shadow-sm bg-white rounded-3"> *@
+@*                             <h3 class="text-28 fw-bold text-dark mb-3">Content Management</h3> *@
+@*                             <p class="text-18 textMain mb-3">Oversee courses, categories, articles, and other site content.</p> *@
+@*                             <a href="#" class="btn btn-warning rounded-pill fw-bold py-2 w-75 textLightPurple">Manage Content</a> *@
+@*                         </div> *@
+@*                     </div> *@
+@*                     <div class="col-md-6"> *@
+@*                         <div class="card p-4 shadow-sm bg-white rounded-3"> *@
+@*                             <h3 class="text-28 fw-bold text-dark mb-3">Settings & Configuration</h3> *@
+@*                             <p class="text-18 textMain mb-3">Adjust application-wide settings and configurations.</p> *@
+@*                             <a href="#" class="btn btn-warning rounded-pill fw-bold py-2 w-75 textLightPurple">Site Settings</a> *@
+@*                         </div> *@
+@*                     </div> *@
+@*                     <div class="col-md-6"> *@
+@*                         <div class="card p-4 shadow-sm bg-white rounded-3"> *@
+@*                             <h3 class="text-28 fw-bold text-dark mb-3">Analytics & Reports</h3> *@
+@*                             <p class="text-18 textMain mb-3">View site performance, user activity, and other important metrics.</p> *@
+@*                             <a href="#" class="btn btn-warning rounded-pill fw-bold py-2 w-75 textLightPurple">View Reports</a> *@
+@*                         </div> *@
+@*                     </div> *@
+@*                 </div> *@
+
+@*             </div> *@
+@*         </div> *@
+@*     </div> *@
+@* </div> *@
+
+@* <style> *@
+@*     /* Add any custom styles from your common CSS or other views here */ *@
+@*     /* Example from your previous codes: */ *@
+@*     .btn-warning { *@
+@*         background-color: #ffc107 !important; *@
+@*         color: #5947ab !important; /* textLightPurple color */ *@
+@*     } *@
+
+@*     .text-yellow { *@
+@*         color: #ffc107 !important; *@
+@*     } *@
+
+@*     .textMain { *@
+@*         color: #6c757d; /* Placeholder, use your actual main text color */ *@
+@*     } *@
+
+@*     .textLightPurple { *@
+@*         color: #5947ab !important; *@
+@*     } *@
+
+@*     .mainBg { *@
+@*         /* Define your main background here */ *@
+@*         /* background-image: url('your-background-image.jpg'); */ *@
+@*         background-color: #f8f9fa; /* Example light background */ *@
+@*     } *@
+
+@*     .card { *@
+@*         border: none; *@
+@*         transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; *@
+@*     } *@
+
+@*         .card:hover { *@
+@*             transform: translateY(-5px); *@
+@*             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; *@
+@*         } *@
+@* </style> *@
+
+

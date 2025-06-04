@@ -14,6 +14,18 @@ namespace KodlaWebApp.Data
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Category> Categories { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder); // IMPORTANT: Call the base method for Identity tables
+
+            // Configure the relationship between Comment and IdentityUser
+            modelBuilder.Entity<Comment>()
+                .HasOne(c => c.User)
+                .WithMany()
+                .HasForeignKey(c => c.UserId)
+                .OnDelete(DeleteBehavior.Cascade); // <--- Make sure this is NoAction
+
+        }
 
         // It's good practice to have this if you inherit from IdentityDbContext
         //protected override void OnModelCreating(ModelBuilder builder)

@@ -1,0 +1,77 @@
+﻿@using KodlaWebApp.Models
+@model IEnumerable<KodlaWebApp.Models.Course>
+
+@{
+    ViewData["Title"] = "All Courses";
+}
+
+<div class="container-fluid py-5 mainBg" style="min-height: calc(100vh - 100px);">
+    <div class="container">
+        <h1 class="text-40 fw-bold text-yellow mb-4 text-center">Our Courses</h1>
+        <p class="text-22 fw-medium textMain mb-5 text-center">Explore a variety of courses designed to boost your skills.</p>
+
+        @if (User.IsInRole("Instructor") || User.IsInRole("Admin"))
+        {
+            <div class="text-center mb-4">
+                <a asp-controller="Course" asp-action="Create" class="btn btn-warning rounded-pill fw-bold py-3 px-5 textLightPurple">Add New Course</a>
+            </div>
+        }
+
+        @if (Model.Any())
+        {
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                @foreach (var course in Model)
+                {
+                    <div class="col">
+                        <div class="card h-100 rounded-3 shadow-sm bg-white">
+                            <img src="https://placehold.co/400x200/e0e0e0/000000?text=@(course.Title.Replace(" ", "+"))" class="card-img-top rounded-top-3" alt="Course Image">
+                            <div class="card-body">
+                                <h5 class="card-title text-24 fw-bold text-dark mb-2">@course.Title</h5>
+                                <p class="card-text text-18 text-dark mb-3">@course.Description</p>
+                                <p class="card-text text-16 textGray">Category: <span class="fw-medium">@course.Category?.Name</span></p>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0 d-flex justify-content-between align-items-center">
+                                <a asp-controller="Course" asp-action="Details" asp-route-id="@course.Id" class="btn btn-outline-warning rounded-pill fw-bold py-2 px-4 textLightPurple">View Details</a>
+                                @if (User.IsInRole("Instructor") || User.IsInRole("Admin"))
+                                {
+                                    <div class="d-flex gap-2">
+                                        <a asp-controller="Course" asp-action="Edit" asp-route-id="@course.Id" class="btn btn-sm btn-primary rounded-pill">Edit</a>
+                                        <a asp-controller="Course" asp-action="Delete" asp-route-id="@course.Id" class="btn btn-sm btn-danger rounded-pill">Delete</a>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p class="text-center text-22 textMain mt-5">No courses found. Be the first to add one!</p>
+        }
+    </div>
+</div>
+
+<style>
+    /* Your existing styles (mainBg, text-yellow, textMain, textLightPurple, btn-warning, etc.) */
+    /* Add any specific styles for cards if needed */
+    .card {
+        border: none;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+        }
+
+    .btn-outline-warning {
+        border-color: #ffc107 !important;
+        color: #ffc107 !important;
+    }
+
+        .btn-outline-warning:hover {
+            background-color: #ffc107 !important;
+            color: #5947ab !important;
+        }
+</style>
